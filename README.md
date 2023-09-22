@@ -1,7 +1,9 @@
 # MAGIC
 The **MAGIC** (*Myopia Associated Genetics and Intervention Consortium*) toolkits are a collection of Python scripts for rare variant-related analysis. The toolkits are composed of four subcommands, they are **vcf2mat** (convert the GATK vcf file into a variant by sample matrix), **RVAS** (fisher test, permutation test, SKAT and ACAT analysis), **logistic**, and **scPBS**, respectively. <br />
 
-![Image text](https://github.com/sulab-wmu/MAGIC/blob/main/pic/MAGIC.png)
+<div align=center>
+<img src="https://github.com/sulab-wmu/MAGIC/blob/main/pic/MAGIC.jpg"/>
+</div>
 
 The **scPBS** (*single-cell Polygenic Burden Score*) is a method to evaluate polygenic burden enrichment of rare variants in individual cells of scRNA-seq data to consider heterogeneity within each cell type. <br />
 
