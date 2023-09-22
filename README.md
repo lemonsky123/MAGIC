@@ -1,7 +1,7 @@
 # MAGIC
 
 <div align=center>
-<img src="https://github.com/sulab-wmu/MAGIC/blob/main/pic/MAGIC.jpg" width="350" height="150"/>
+<img src="https://github.com/sulab-wmu/MAGIC/blob/main/pic/MAGIC.jpg" width="350" height="140"/>
 </div>
 
 The **MAGIC** (*Myopia Associated Genetics and Intervention Consortium*) toolkits are a collection of Python scripts for rare variant-related analysis. The toolkits are composed of four subcommands, they are **vcf2mat** (convert the GATK vcf file into a variant by sample matrix), **RVAS** (fisher test, permutation test, SKAT and ACAT analysis), **logistic**, and **scPBS**, respectively. The **scPBS** (*single-cell Polygenic Burden Score*) is a method to evaluate polygenic burden enrichment of rare variants in individual cells of scRNA-seq data to consider heterogeneity within each cell type. <br />
@@ -15,3 +15,5 @@ The **MAGIC** (*Myopia Associated Genetics and Intervention Consortium*) toolkit
 **_(3)._** scPBS quantifies the EM-related polygenic burden coefficient (odds ratio) of highly expressed genes in each cell to generate single-cell specific polygenic burden scores (scPBS). Following previous studies, we correlate scPBS with the expression level of each gene across cells and prioritize the trait-relevant genes by ranking the Pearson correlation coefficients (PCCs). <br />
 
 Finally, a rare variant trait-relevant score (rvTRS) of each cell is computed by averaging the expression level of the top 10% trait-relevant genes based on ranked PCCs and subtracting the random control cell score via the cell-scoring method used in Seurat.
+
+_If you have any questions using our toolkits, please reach out via <likai@ucas.ac.cn> and <yuanjian0415@gmail.com>._
