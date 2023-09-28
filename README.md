@@ -16,6 +16,6 @@ The **MAGIC** (*Myopia Associated Genetics and Intervention Consortium*) toolkit
 
 Finally, a rare variant trait-relevant score (rvTRS) of each cell is computed by averaging the expression level of the top 10% trait-relevant genes based on ranked PCCs and subtracting the random control cell score via the cell-scoring method used in Seurat.
 
-**[We also provide a step-by-step tutorial for you to walk through the scPBS pipeline](https://github.com/sulab-wmu/MAGIC/blob/main/tutorial.md)**
+**[We also provide a step-by-step tutorial for you to walk through the scPBS pipeline](https://github.com/sulab-wmu/MAGIC/blob/main/tutorial.md)**.
 
 _If you have any questions using our toolkits, please reach out via <likai@ucas.ac.cn> and <yuanjian0415@gmail.com>._
