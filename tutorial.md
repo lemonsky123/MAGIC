@@ -38,7 +38,7 @@ seu <- DietSeurat(
 
 MuDataSeurat::WriteH5AD(seu, "seurat_obj.h5ad", assay="RNA")
 ```
-After converting, run scPBS with the following commands.
+After converting, run scPBS with the following commands. **Note that when performing the logistic regression, Statsmodels will use the max CPU cores by default. If you want the program to run faster, you'd better apply more CPU cores in PBS or Slurm. In our machine, it could use a maximum of 60 CPUs given 80 or more**. [The link to this problem is here](https://github.com/statsmodels/statsmodels/issues/2914).
 ```
 magic scPBS -p rare_lof.txt -g sample_EM_class.txt -b seurat_obj.h5ad -o seurat_obj_corr_odds.txt
 ```
