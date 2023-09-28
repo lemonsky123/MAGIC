@@ -50,3 +50,6 @@ After getting the correlation result. You could run the magic seurat_plot comman
 ```
 magic seurat_plot -r seurat_obj.rds -c seurat_obj_corr_odds.txt -o seurat_obj_feature.pdf -rscript /usr/bin/Rscript
 ```
+<div align=center>
+<img src="https://github.com/sulab-wmu/MAGIC/blob/main/pic/feature_plot.jpg" width="450" height="300"/>
+</div>
