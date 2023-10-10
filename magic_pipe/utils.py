@@ -145,6 +145,6 @@ def seurat_to_h5ad(path_rds, path_h5ad, path_rscript):
 def seurat_plot_cluster(path_rds, path_cor, path_pdf, path_rscript):
     if path_rscript == "Rscript" and not sh.which("Rscript"):
         raise FileNotFoundError("Could not find Rscript, please add Rscript in your path and try again.")
-    path_seurat_plot_cluster = f"{path_tools}/scPBS_seurat_to_h5ad.R"
+    path_seurat_plot_cluster = f"{path_tools}/scPBS_plot_cluster.R"
     rscript = sh.Command(path_rscript)
     rscript(path_seurat_plot_cluster, path_rds, path_cor, path_pdf)

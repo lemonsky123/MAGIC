@@ -52,7 +52,7 @@ def parse_sparse_matrix(path_h5ad):
 
 def parse_vcf2mat(path_vcf2mat, path_group, genes_with_exp_gt_02):
     total_sample_type = parse_group_file(path_group=path_group)
-    print(green(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}]: Start reading from  {path_vcf2mat}"))
+    print(green(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}]: Start reading from {path_vcf2mat}"))
     samples = []
     total_snp = defaultdict(lambda: 0)
     samples_variants_count_in_cell = defaultdict(lambda: defaultdict(lambda: 0))
@@ -77,8 +77,8 @@ def parse_vcf2mat(path_vcf2mat, path_group, genes_with_exp_gt_02):
                             for each_cell in this_gene_cells:
                                 samples_variants_count_in_cell[each_sample_genotype[0]][each_cell] += 1
     print(green(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}]: Add group label to each sample"))
-    samples_with_variant = list(samples_variants_count_in_cell.keys())
-    for each_sample in samples_with_variant:
+    # samples_with_variant = list(samples_variants_count_in_cell.keys())
+    for each_sample in samples:
         this_sample_group = total_sample_type[each_sample]
         samples_variants_count_in_cell[each_sample]["group"] = this_sample_group
     # convert the sample_cell_variant count dict to pandas dataframe, and fill NaN with 0
@@ -139,8 +139,8 @@ def logistic(samples_variants_count_in_cell_mat: pd.DataFrame, progress: bool, d
     if progress:
         pbar.close()
 
-    gene_corr_pvalue_sorted = sorted(gene_corr_pvalue.items(), key=lambda k: k[1]["pvalue"])
+    gene_corr_pvalue_sorted = sorted(gene_corr_pvalue.items(), key=lambda k: k[1]["correlation"], reverse=True)
     with open(path_out, "w+") as out:
-        out.write("gene\tcorrelation\tpvalue\n")
+        out.write("gene\todds ratio\tpvalue\n")
         for each_item in gene_corr_pvalue_sorted:
             out.write("{}\t{}\t{}\n".format(each_item[0], each_item[1]["correlation"], each_item[1]["pvalue"]))

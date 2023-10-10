@@ -137,7 +137,7 @@ def main():
                                                  "and ACAT analysis for genes extracted from the vcf2mat command\n"
                                                  "\t%(prog)s logistic: Run logistic on gene sample matrix\n"
                                      "\t%(prog)s scPBS: single-cell Polygenic Burden Score\n"
-                                     "\t%(prog)s seurat2h5ad: Convert Seurat rds to h5ad\n"
+                                     "\t%(prog)s rds2h5ad: Convert Seurat rds to h5ad\n"
                                      "\t%(prog)s seurat_plot: Feature plot for correlation results\n",
                                      formatter_class=argparse.RawTextHelpFormatter)
     subparsers = parser.add_subparsers(title="modules", help='magic modules, use -h/--help for help')
@@ -148,7 +148,7 @@ def main():
     sub_logistic = subparsers.add_parser("logistic", description="Run logistic on gene sample matrix")
     sub_scPBS = subparsers.add_parser("scPBS",
                                       description="single-cell Polygenic Burden Score")
-    sub_seurat_to_h5ad = subparsers.add_parser("seurat2h5ad", description="Convert Seurat rds to h5ad")
+    sub_seurat_to_h5ad = subparsers.add_parser("rds2h5ad", description="Convert Seurat rds to h5ad")
     sub_seurat_plot_cluster = subparsers.add_parser("seurat_plot", description="Feature plot for correlation results")
     # vcf2mat
     sub_vcf_to_matrix.add_argument("-p", help="Path to reference vcf file", action="store", dest="path_vcf", type=str,

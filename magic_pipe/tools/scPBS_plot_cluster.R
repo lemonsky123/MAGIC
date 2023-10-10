@@ -1,5 +1,6 @@
 suppressPackageStartupMessages(library(Seurat))
 suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(ggplot2))
 
 all_args <- commandArgs()
 seurat_obj_path <- all_args[6]
@@ -14,6 +15,8 @@ cor_top500 <- as.list(cor_top500)
 
 pcw_new <- AddModuleScore(pcw_new, features = cor_top500 ,name = "rvTRS")
 pcw_new$rvTRS1[which(pcw_new$rvTRS1<0)]<-0
-FeaturePlot(pcw_new, features = "rvTRS1", cols =c("lightgrey", "#DC143C")) + ggtitle("cor_top500")
 
-ggsave(file = pdf_path)
+pdf(pdf_path)
+FeaturePlot(pcw_new, features = "rvTRS1", cols =c("lightgrey", "#DC143C")) + ggtitle("cor_top500")
+dev.off()
+# ggsave(file = pdf_path)
