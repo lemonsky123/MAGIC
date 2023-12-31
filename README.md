@@ -18,4 +18,4 @@ Finally, a rare variant trait-relevant score (rvTRS) of each cell is computed by
 
 **[We also provide a step-by-step tutorial for you to walk through the scPBS pipeline](https://github.com/sulab-wmu/MAGIC/blob/main/tutorial.md)**.
 
-_If you have any questions using our toolkits, please reach out via <likai@ucas.ac.cn> and <yuanjian0415@gmail.com>._
+_If you have any questions using our toolkits, please reach out via <kaili22225@gmail.com> and <yuanjian0415@gmail.com>._
